@@ -155,13 +155,6 @@ hr {
   background-color: #60c0c2;
 }
 
-@media only screen and (max-width: 768px) {
-  .container .in,
-  .container .collapsing {
-    background-color: #23173998;
-  }
-}
-
 .center-image {
   height: 580px;
 }
@@ -175,6 +168,11 @@ hr {
 @media only screen and (max-width: 768px) {
   .center-image {
     height: 300px;
+  }
+
+  .container .in,
+  .container .collapsing {
+    background-color: #23173998;
   }
 }
 
@@ -417,3 +415,122 @@ hr {
     display: none;
   }
 }
+
+.banner-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 580px;
+}
+
+.rivr-kitty-bg {
+  position: absolute;
+  top: 0;
+}
+
+.rivr-kitty-kitty {
+  position: absolute;
+  top: 6px;
+  height: 400px;
+  margin-left: -152px;
+  -webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.rivr-kitty-kitty:hover {
+  height: 405px;
+}
+
+.figure-kitty-text {
+  position: absolute;
+  height: 102px;
+  bottom: 170px;  
+  overflow: hidden;
+  display: inline-block;
+}
+
+.figure-kitty-text img{
+  height: 102px;
+}
+
+/* Rivr kitty banner styles */
+@media only screen and (max-width: 1280px) {
+  .banner-container {
+    height: 480px;
+  }
+
+  .rivr-kitty-kitty {
+    height: 330px;
+    margin-left: -122px;
+  }
+
+  .rivr-kitty-kitty:hover {
+    height: 335px;
+  }
+
+  .figure-kitty-text {
+    bottom: 138px;
+    height: 86px;
+  }
+  .figure-kitty-text img {
+    height: 86px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .banner-container {
+    height: 300px;
+  }
+  
+  .rivr-kitty-kitty {
+    height: 204px;
+    margin-left: -78px;
+  }
+  
+  .rivr-kitty-kitty:hover {
+    height: 209px;
+  }
+  
+  .figure-kitty-text {
+    height: 52px;
+    bottom: 88px;
+  }
+  .figure-kitty-text img {
+    height: 52px;
+  }
+}
+
+/* Rivr Kitty Text Shine Effect */
+.figure-kitty-text:after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 10%;
+  height: 180%;
+  opacity: 0;
+  transform: rotate(30deg);
+
+  background: rgba(255, 255, 255, 0.09);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.09) 0%,
+    rgba(255, 255, 255, 0.09) 77%,
+    rgba(255, 255, 255, 0.5) 92%,
+    rgba(255, 255, 255, 0.0) 100%
+  );
+}
+
+.figure-kitty-text:hover:after {
+  opacity: 0.4;
+  left: 130%;
+  transition-property: left, top, opacity;
+  transition-duration: 1s, 1s, 0.5s;
+  transition-timing-function: ease;
+}
+
+.figure-kitty-text:active:after {
+  opacity: 0;
+}
+/* Rivr kitty banner styles ends */
